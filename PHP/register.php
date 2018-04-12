@@ -1,7 +1,44 @@
 <?php
-require_once ('./inc/core.php');
-$core = new Core('register');
-$core->load();
+
+function my_autoloader($class) {
+    include 'inc/' . $class . '.php';
+}
+
+spl_autoload_register('my_autoloader');
+
+$db = new Connect();
+
+if(isset($_REQUEST['username'])) {
+    $username = stripslashes($_REQUEST['username']);
+    $username = $db->secure($username);
+    $email = stripslashes($_REQUEST['email']);
+    $email = $db->secure($email);
+    $password = stripslashes($_REQUEST['password']);
+    $password = $db->secure($password);
+    $password = password_hash($password, PASSWORD_ARGON2I);
+    $address = stripslashes($_REQUEST['address']);
+    $address = $db->secure($address);
+    $city = stripslashes($_REQUEST['city']);
+    $city = $db->secure($city);
+    $state = stripslashes($_REQUEST['state']);
+    $state = $db->secure($state);
+    $zipcode = stripslashes($_REQUEST['zipcode']);
+    $zipcode = $db->secure($zipcode);
+    $phone = stripslashes($_REQUEST['phone']);
+    $phone = $db->secure($phone);
+
+    $query = "INSERT INTO user (username, password, EmailAddress, Address, PhoneNumber) VALUES ('$username', '".md5($password)."', '$email', '$address', '$phone') ";
+
+    $result = $db->query($query);
+
+    if($result) {
+        echo "<div class='form'>
+<h3>You are registered successfully.</h3>
+<br/>Click here to <a href='login.php'>Login</a></div>";
+    } else {echo 'da fuck?';}
+
+} else {
+
 ?>
 
 <!DOCTYPE html>
@@ -47,5 +84,6 @@ $core->load();
 				</form>
 			</div>
 		</div>
+    <?php } ?>
 	</body>
 </html>

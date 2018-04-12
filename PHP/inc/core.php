@@ -1,30 +1,17 @@
 <?php
 
-require_once ('users.php');
+namespace Movies;
 
-class Core
+require_once ('global.php');
+class Core extends Users
 {
 
-    private $users, $url;
-
-    function __construct($url) {
-        $this->users = new Users();
-        $this->url = $url;
-    }
-
-    function load() {
+    function load($url) {
 
         if(!isset($_SESSION ['id'])) {
-            switch ($this->url) {
+            switch ($url) {
                 case 'register':
-                    $this->users->register();
-                    break;
-                case 'login':
-                    $this->users->login();
-                    break;
             }
         }
     }
 }
-
-?>

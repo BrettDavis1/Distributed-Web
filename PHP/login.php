@@ -1,8 +1,33 @@
 <?php
+
+function my_autoloader($class) {
+    include 'inc/' . $class . '.php';
+}
+
+spl_autoload_register('my_autoloader');
+
 session_start();
-require_once ('./inc/core.php');
-$core = new Core('login');
-$core->load();
+$db = new Connect();
+
+if(isset($_POST['username'])) {
+    $username = stripslashes($_REQUEST['username']);
+    $username = $db->secure($username);
+    $password = stripslashes($_REQUEST['password']);
+    $password = $db->secure($password);
+
+    $query = "SELECT id FROM user WHERE username = '$username' and password = '".md5($password)."'";
+    $result = $db->query($query) or die(mysqli_error($db->mysqli));
+
+    if($result->num_rows > 0) {
+        $id = mysqli_fetch_assoc($result);
+        $_SESSION['id'] = $id['id'];
+        header("Location: home.php");
+    }else {
+        echo "<div class='form'>
+<h3>Username/password is incorrect.</h3>
+<br/>Click here to <a href='login.php'>Login</a></div>";
+    }
+}else{
 ?>
 
 <!DOCTYPE html>
@@ -38,5 +63,6 @@ $core->load();
 				</form>
 			</div>
 		</div>
+    <?php } ?>
 	</body>
 </html>
