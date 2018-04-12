@@ -3,14 +3,14 @@
 class Connect
 {
 
-    var $sql, $mysqli, $result, $query;
+    public $sql, $mysqli, $result, $query;
 
     function __construct() {
         $this->start();
     }
 
     function start() {
-        $this->mysqli = new mysqli('localhost', 'root', '123456', 'test');
+        $this->mysqli = new mysqli("localhost", "root", "123456", "test");
 
         if ($this->mysqli->connect_error) {
             die('Connect Error (' . $this->mysqli->connect_errno . ') '

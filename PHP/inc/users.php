@@ -1,22 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mike
- * Date: 3/27/18
- * Time: 8:23 PM
- */
-
-namespace Movies;
-
-require_once './global.php';
+require_once ('connect.php');
 
 class Users
 {
 
-    public $errors;
+    public $errors, $db;
+
+    function __construct()
+    {
+        $this->db = new Connect();
+    }
 
     final public function checkEmail($email) {
-        $email = $db->secure($email);
+        $email = $this->db->secure($email);
         $query = "SELECT id FROM users WHERE mail='$email'";
         $res = mysql_query($query);
         if (mysql_num_rows($res) > 0) {
@@ -38,20 +34,21 @@ class Users
             return(true); }
     }
 
-    final public function checkLogin($email, $pass) {
-        $this->e = $db->secure($email);
-        $this->p = $db->secure(sha1($pass));
-        $this->q = "SELECT * FROM users WHERE mail ='$this->e' AND password ='$this->p'";
-        $this->r = mysql_query($this->q);
-        if (mysql_num_rows($this->r) > 0) {
-            return(true); }
+    function checkLogin($username, $pass) {
+        return true;
+        $query = "SELECT password FROM user WHERE username ='".$this->db->secure($username)."'";
+        $result = $this->db->query($query);
+        if ($result->num_rows > 0) {
+            $password = $result->fetch_assoc();
+            if($password['password'] == $pass && password_verify($password['password'], 'PASSWORD_DEFAULT'))
+                return true;
+        }
     }
 
     final public function register() {
-        if (!empty($_POST['rusername']) && !empty($_POST['rpassword']) && !empty($_POST['address']) && !empty($_POST['remail']) && !empty($_POST['city'])
-            && !empty($_POST['state']) && !empty($_POST['zipcode']) && !empty($_POST['phone'])) {
+        if (!empty($_REQUEST['username']) && !empty($_REQUEST['email']) && !empty($_REQUEST['password'])) {
 
-            if (!$this->validEmail($_POST['remail']))
+            if (!$this->validEmail($_REQUEST['email']))
                 $this->errors = "Enter Valid Email Address!";
             else {
                 $this->addUser();
@@ -71,19 +68,17 @@ class Users
         $_SESSION['id'] = "$this->idr";
     }
 
-    final public function login() {
-        if (!empty($_POST['email']) && !empty($_POST['password'])) {
-            if ($this->checkLogin($_POST['email'], $_POST['password'])) {
-                $email = $db->secure($_POST['email']);
-                $query = "SELECT id FROM users WHERE mail = '$email'";
-                $result = mysql_query($query);
-                $id = mysql_result($result, 0);
-                $_SESSION['id'] = "$id";
-                $date = date("F j, Y, g:i a");
-                mysql_query("UPDATE users SET last_online='$date' WHERE id = '$id'");
+    function login() {
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            if ($this->checkLogin($_POST['username'], $_POST['password'])) {
+                $username = $this->db->secure($_POST['username']);
+                $query = "SELECT id FROM user WHERE username = '$username'";
+                $result = $this->db->query($query);
+                $id = $result->fetch_assoc();
+                $_SESSION['id'] = $id['id'];
                 unset($errors);
-                header('Location: me.php');
-                exit; }
+                header('Location: home.php');
+            }
             else { $this->errors = 'Invalid Login Details'; return; }
         }
         elseif (empty($_POST['email']) || empty($_POST['password'])) { $this->errors = 'Fill in All Spaces!'; return;}
@@ -101,18 +96,31 @@ class Users
     }
 
     final public function addUser() {
-        $this->username = $db->secure($_POST['rusername']);
-        $this->email = $db->secure($_POST['remail']);
-        $this->password = $db->secure(sha1($_POST['rpassword']));
-        $this->motto = $db->secure($this->motto);
-        $this->auth_ticket = $db->secure($this->sso());
-        $this->created = $db->secure(date("F j, Y, g:i a"));
-        $this->ip = $db->secure($_SERVER['REMOTE_ADDR']);
-        $this->last = $db->secure(date("F j, Y, g:i a"));
-        $this->query = "INSERT INTO users (username, password, mail, motto, auth_ticket, account_created, last_online, ip_last, ip_reg) VALUES('$this->username ', '$this->password', '$this->email', '$this->motto', '$this->ticket', '$this->created', '$this->last', '$this->ip', '$this->ip')";
-        $db->query($this->query);
+        $username = stripslashes($_REQUEST['username']);
+        $username = $this->db->secure($username);
+        $email = stripslashes($_REQUEST['email']);
+        $email = $this->db->secure($email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = $this->db->secure($password);
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $address = stripslashes($_REQUEST['address']);
+        $address = $this->db->secure($address);
+        $city = stripslashes($_REQUEST['city']);
+        $city = $this->db->secure($city);
+        $state = stripslashes($_REQUEST['state']);
+        $state = $this->db->secure($state);
+        $zipcode = stripslashes($_REQUEST['zipcode']);
+        $zipcode = $this->db->secure($zipcode);
+        $phone = stripslashes($_REQUEST['phone']);
+        $phone = $this->db->secure($phone);
 
-        header('Location: index');
+        $query = "INSERT INTO user (username, password, EmailAddress, Address, PhoneNumber) VALUES ('$username', '$password', '$email', '$address', '$phone') ";
+
+        $result = $this->db->query($query);
+
+        if($result)
+            header('Location: login.php');
+        else $this->errors = "User Already Exist";
     }
 
     final public function sso($id) {
@@ -140,4 +148,3 @@ class Users
 }
 
 ?>
-}
