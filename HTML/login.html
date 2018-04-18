@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<link rel="stylesheet" href="home.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<header class="w3-container w3-xlarge w3-padding-24" style="background-color: #0D10D4;">
-			<div class="w3-container">
-				<a href="login.html"><button class="w3-button w3-large w3-right" style="background-color: #0D10D4; color: #ffffff;">Login</button></a>
-				<a href="createAccount.html"><button class="w3-button w3-large w3-right" style="background-color: #0D10D4; color: #ffffff;">Create Account</button></a>
+
+
+		<!--Navigation bar-->
+		<div class="w3-top" style= "position: fixed;  top: 0;  width: 100%;  ">
+				<div class="w3-bar w3-card"  style="height:55px; background-color: #000000; color: #ffffff;">
+					<a href="home.html" class="w3-bar-item w3-button"><img src="logo2.jpg" style="width:30px; height:30px;"/> ovies</a>
+					<div class="w3-right w3-hide-small">
+					<a href="movies.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Movies</a>
+					<a href="cart.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Cart</a>
+					<a href="history.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">History</a>
+					<a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Contact Us</a>
+					<a href="createAccount.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Create an account</a>
+					<a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Sign in</a>
+				</div>
+				</div>
 			</div>
-		</header>
-		<div class="w3-bar w3-card" style="background-color: #8C8EFA; color: #ffffff;">
-			<a href="home.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
-			<a href="movies.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Movies</a>
-			<a href="cart.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Cart</a>
-			<a href="history.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">History</a>
-			<a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Contact Us</a>
-		</div>
+
+			<!--Blank container-->
+			<div class="w3w3-container " style="height:46px;" >
+			</div>
+
+
+			<!--login information area-->
 		<div class="w3-row-padding w3-center w3-margin-top">
 			<div class="w3-card w3-container" style="min-height: 150px; background-color: #8C8EFA; color: #000000;">
 				<h1>Login</h1>
@@ -31,5 +46,28 @@
 				</form>
 			</div>
 		</div>
+
+		<!--Blank area-->
+		<div class="w3-container " style="height:400px;" >
+		</div>
+
+
+		<!---footer----->
+		<footer class="w3-center w3-black w3-padding-64 " style="background-color: #000000; " >
+			<div class="w3-container " style="height:60px;" >
+			</div>
+			<a href="login.html" class="w3-button w3-light-grey" style="color: #ffffff; background-color:#b4b4b4"><i class="fa fa-arrow-up w3-margin-right" style="color: #ffffff;"></i>To the top</a>
+			<div class="w3-xlarge w3-section" >
+				<i class="fa fa-facebook-official w3-hover-opacity" style="color: #ffffff;"></i>
+				<i class="fa fa-instagram w3-hover-opacity" style="color: #ffffff;" ></i>
+				<i class="fa fa-snapchat w3-hover-opacity" style="color: #ffffff;"></i>
+				<i class="fa fa-pinterest-p w3-hover-opacity" style="color: #ffffff;"></i>
+				<i class="fa fa-twitter w3-hover-opacity" style="color: #ffffff;"></i>
+				<i class="fa fa-linkedin w3-hover-opacity" style="color: #ffffff;"></i>
+			</div>
+			<div class="w3-container " style="height:60px;" >
+			</div>
+		</footer>
+
 	</body>
 </html>
