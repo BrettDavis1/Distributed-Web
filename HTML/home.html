@@ -1,45 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<link rel="stylesheet" href="home.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<header class="w3-container w3-xlarge w3-padding-24" style="background-color: #0D10D4;">
-			<div class="w3-container">
-				<a href="login.html"><button class="w3-button w3-large w3-right" style="background-color: #0D10D4; color: #ffffff;">Login</button></a>
-				<a href="createAccount.html"><button class="w3-button w3-large w3-right" style="background-color: #0D10D4; color: #ffffff;">Create Account</button></a>
-				<h1 style="font-size:200em;" class="w3-large w3-center">Rent A Movie</h1>
+
+
+		<!--Navigation bar-->
+		<div class="w3-top" style= "position: fixed;  top: 0;  width: 100%;  ">
+				<div class="w3-bar w3-card"  style="height:55px; background-color: #000000; color: #ffffff;">
+					<a href="home.html" class="w3-bar-item w3-button"><img src="logo2.jpg" style="width:30px; height:30px;"/> ovies</a>
+					<div class="w3-right w3-hide-small">
+					<a href="movies.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Movies</a>
+					<a href="cart.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Cart</a>
+					<a href="history.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">History</a>
+					<a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white"><i class="fa fa-envelope"></i>Contact Us</a>
+					<a href="createAccount.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Create an account</a>
+					<a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Sign in</a>
+				</div>
+				</div>
 			</div>
-		</header>
-		<div class="w3-bar w3-card" style="background-color: #8C8EFA; color: #ffffff;">
-			<a href="home.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
-			<a href="movies.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Movies</a>
-			<a href="cart.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Cart</a>
-			<a href="history.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">History</a>
-			<a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Contact Us</a>
-		</div>
-		<div class="w3-row-padding w3-center w3-margin-top">
-			<div class="w3-card w3-container" style="min-height: 150px; background-color: #8C8EFA; color: #000000;">
-				<h1 style="text-align: center;" class="w3-margin-top"><b>Welcome to Rent A Movie</b>
-					<h4 style="text-align: center;" class="w3-margin-top">Create a Account or Sign In to start renting!</h4>					
-				</h1>
+
+			<!--Blank container-->
+			<div class="w3w3-container " style="height:46px;" >
+
 			</div>
-		</div>
-		<div style="padding-bottom: 16.5px;"></div>
-			<div class="w3-card w3-container" style="min-height: 280px; background-color: #8C8EFA; color: #000000;">
-				<h1 style="text-align: center;" class="w3-margin-top"><b>Popular Movies</b>
-					<h4 style="text-align: center;" class="w3-margin-top">Sign in to see more Movies</h4>
-					<h4 style="text-align: center;" class="w3-margin-top">List of movies</h4>
-					<?php
-					?>
-				</h1>
+
+			<!--BANNER-->
+			<div style= "text-align: center;">
+				<img src="black-panther.jpg" style="text-align: center; width: 100%;">
 			</div>
-		</div>
-		<div style="padding-bottom: 16.5px;"></div>
-		<footer class="w3-container w3-center w3-padding-16 w3-margin-top" style="background-color: #8C8EFA; color: #ffffff;">
-			<p>COPYRIGHT INFO</p>
+
+
+
+
+			<!--Blank container------------------------------------------------->
+			<div class="w3w3-container " style="height:46px;" >
+
+			</div>
+
+
+
+			<!--Home page movies display-------------------------------------->
+
+			<div class="w3-container w3-padding-32 " >
+				<b><font size="5">NEW RELEASE Blue DVD & Blue-ray  </font> <b><a href="home.html">see all></a>
+			</div>
+
+
+			<div class="w3-container"  >
+
+			<a href="MovieInfo.html"><img src="Avengers.jpg" style="width:125px; height:200px;"/></a>
+			<a href="MovieInfo.html"><img src="Matrix.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Ready_Player_One.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="The_Dark_Knight.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Taken.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="American_Beauty" style="width:125px; height:200px;"/></a>
+			<a href="MovieInfo.html"><img src="Shaun_of_the_Dead.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="SuperBad.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="The_Hangover.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Forrest_Gump.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Anchorman.jpg" style="width:125px; height:200px;"/></a>
+			<a href="MovieInfo.html"><img src="Saving_Private_Ryan.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="The_Passion.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Titanic.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Get_Out.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="It_Follows.jpg" style="width:125px; height:200px;"/></a>
+			<a href="MovieInfo.html"><img src="IT.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Hot_Fuzz.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="The_Conjuring.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Alien.jpg"style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="District_9.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="ex_machina.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Inception.jpg" style="width:125px; height:200px;"></a>
+			<a href="MovieInfo.html"><img src="Star_wars.jpg" style="width:125px; height:200px;"></a>
+
+
+			</div>
+
+			<!--Blank Container-->
+			<div class="w3-container " style="height:100px;" >
+			</div>
+
+
+
+
+
+		<!---footer----->
+		<footer class="w3-center w3-black w3-padding-64 " style="background-color: #000000; " >
+			<div class="w3-container " style="height:60px;" >
+			</div>
+		  <a href="home.html" class="w3-button w3-light-grey" style="color: #ffffff; background-color:#b4b4b4"><i class="fa fa-arrow-up w3-margin-right" style="color: #ffffff;"></i>To the top</a>
+		  <div class="w3-xlarge w3-section" >
+		    <i class="fa fa-facebook-official w3-hover-opacity" style="color: #ffffff;"></i>
+		    <i class="fa fa-instagram w3-hover-opacity" style="color: #ffffff;" ></i>
+		    <i class="fa fa-snapchat w3-hover-opacity" style="color: #ffffff;"></i>
+		    <i class="fa fa-pinterest-p w3-hover-opacity" style="color: #ffffff;"></i>
+		    <i class="fa fa-twitter w3-hover-opacity" style="color: #ffffff;"></i>
+		    <i class="fa fa-linkedin w3-hover-opacity" style="color: #ffffff;"></i>
+		  </div>
+			<div class="w3-container " style="height:60px;" >
+
+			</div>
 		</footer>
+
 	</body>
 </html>
-
 
