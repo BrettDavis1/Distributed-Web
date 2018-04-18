@@ -4,7 +4,7 @@ require_once ('connect.php');
 class Users
 {
 
-    public $errors, $db, $mn = array();
+    private $errors, $db;
 
     function __construct()
     {
@@ -26,12 +26,13 @@ class Users
             return(true); }
     }
 
-    final public function checkUser($user) {
-        $user = $db->secure($user);
-        $query = "SELECT id FROM users WHERE username='$user'";
-        $res = mysql_query($query);
-        if (mysql_num_rows($res) > 0) {
-            return(true); }
+    final public function getUser($id) {
+        $id = $this->db->secure($id);
+        $query = "SELECT * FROM user WHERE id = '$id'";
+        $result = $this->db->query($query);
+        $name = mysqli_fetch_assoc($result);
+
+        return $name['username'];
     }
 
     function checkLogin($username, $pass) {
@@ -63,7 +64,7 @@ class Users
     }
 
     final public function session($email) {
-        $this->em = $db->secure($email);
+        $this->em = $this->db->secure($email);
         $this->idr = mysql_query("SELECT id FROM users WHERE mail = '$this->em'");
         $_SESSION['id'] = "$this->idr";
     }
@@ -136,6 +137,12 @@ class Users
             $mn[$i] = $name['title'];
             echo $mn[$i];
         }
+    }
+
+    final public function getMovies() {
+        $query = "SELECT * FROM movies ORDER BY id DESC LIMIT 10";
+        $result = $this->db->query($query);
+        return $result;
     }
 }
 
