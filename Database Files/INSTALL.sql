@@ -114,7 +114,9 @@ CREATE TABLE `user` (
   `Username` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `EmailAddress` varchar(255) DEFAULT NULL COMMENT 'User Email',
-  `Address` varchar(255) DEFAULT NULL COMMENT 'User Address',
+  `StreetAddress` varchar(255) DEFAULT NULL COMMENT 'User Street Address',
+  `State` varchar(50) DEFAULT NULL COMMENT 'User's state',
+  `State` varchar(20)  DEFAULT NULL COMMENT 'User's zip code',
   `PhoneNumber` varchar(20) DEFAULT NULL COMMENT 'User Phone Number'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
