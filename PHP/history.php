@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once ('./inc/users.php');
+$users = new Users();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,15 +27,7 @@
 			<div class="w3-card w3-container" style="min-height: 150px; background-color: #8C8EFA; color: #000000;">
 				<h1>Movies you have watched</h1>
 				<?php
-                function my_autoloader($class) {
-                    include 'inc/' . $class . '.php';
-                }
-
-                spl_autoload_register('my_autoloader');
-
-                $db = new Connect();
-
-
+                $users->getHistory($_SESSION['id']);
 				?>
 			</div>
 		</div>

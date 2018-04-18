@@ -4,7 +4,7 @@ require_once ('connect.php');
 class Users
 {
 
-    public $errors, $db;
+    public $errors, $db, $mn = array();
 
     function __construct()
     {
@@ -123,26 +123,18 @@ class Users
         else $this->errors = "User Already Exist";
     }
 
-    final public function sso($id) {
-        $this->minimum = 5;
-        $this->maximum = getrandmax();
-        $this->sso = 'theCMS-'.rand(9,999).'/'.substr(sha1(time()).'/'.rand(9,9999999).'/'.rand(9,9999999).'/'.rand(9,9999999),0,33);
-        mysql_query("UPDATE users SET auth_ticket = '$this->sso' WHERE id = '$id'");
-        $_SESSION['user']['auth_ticket'] = $this->sso;
-    }
+    final public function getHistory($id) {
+        $id = $this->db->secure($id);
+        $query = "SELECT mid FROM history WHERE uid = '$id'";
+        $result = $this->db->query($query);
+        $mids = mysqli_fetch_array($result, MYSQLI_NUM);
 
-    final public function housekeeping() {
-        global $template;
-        if ($this->loggedIn()) {
-            $this->hid = $_SESSION['id'];
-            $this->rank = mysql_query("SELECT rank FROM users WHERE id = '$this->hid'");
-
-            if ($this->rank > 2) {
-                $template->replace(array('housekeeping'=>'Housekeeping'));
-            }
-            else {
-                $template->replace(array('housekeeping'=>''));
-            }
+        for($i = 0; $i < sizeof($mids); $i++) {
+            $query = "SELECT title FROM movies WHERE id = '".$this->db->secure($mids[$i])."'";
+            $result = $this->db->query($query);
+            $name = mysqli_fetch_assoc($result);
+            $mn[$i] = $name['title'];
+            echo $mn[$i];
         }
     }
 }

@@ -23,6 +23,15 @@ class Core
                     $this->users->login();
                     break;
             }
+        } else {
+            switch ($this->url) {
+                case 'register':
+                    header('Location: home.php');
+                    break;
+                case 'login':
+                    header('Location: home.php');
+                    break;
+            }
         }
     }
 }
