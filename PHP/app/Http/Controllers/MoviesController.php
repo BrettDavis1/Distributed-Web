@@ -9,16 +9,23 @@ class MoviesController extends Controller
 {
     public function index() {
 
-        $covers = Movie::info('image');
-        $id = str_replace('[', '', Movie::info('id'));
-        $id = str_replace(']', '', $id);
-        return view('movies.index', compact('covers', 'id'));
+        if(!auth()->check())
+            return redirect()->to('/login');
+
+        $actions = (new Movie)->getMovie('action');
+        $comedies = (new Movie)->getMovie('comedy');
+        return view('movies.index', compact('actions', 'comedies'));
 
     }
 
     public function description(Movie $movie) {
 
+        if(!auth()->check())
+            return redirect()->to('/login');
+
         return view('movies.description', compact('movie'));
 
     }
+
+
 }

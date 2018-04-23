@@ -23,7 +23,16 @@
             <a href="home.html"><img src="{{ $movie->image }}" alt="/Genres/Action/Avengers.jpg"style="width:250px; height:400px;"/></a>
         </div>
         <div class=" w3-container">
-            <p>{{ $movie->Description }}</p>
+            <form action="/cart" method="POST">
+                {{ csrf_field() }}
+                <input type="hidden" name="id" value="{{ $movie->id }}">
+                <input type="hidden" name="name" value="{{ $movie->Movie_Title }}">
+                <input type="hidden" name="price" value="{{ $movie->Price }}">
+                <p>{{ $movie->Description }}</p>
+                <p>${{ $movie->Price }}</p>
+                <br />
+                <input type="submit" class="btn btn-dark" value="Add to Cart">
+            </form>
         </div>
     </div>
 

@@ -9,7 +9,7 @@
 
     <!--BANNER-->
     <div style= "text-align: center;">
-        <img src="black-panther.jpg" style="text-align: center; width: 100%;">
+        <a href="/movies/{{ $bp->id }}"><img src="{{ $bp->image }}" style="text-align: center; width: 100%;"></a>
     </div>
 
 
@@ -25,17 +25,15 @@
     <!--Home page movies display-------------------------------------->
 
     <div class="w3-container w3-padding-32 " >
-        <b><font size="5">NEW RELEASE Blue DVD & Blue-ray  </font> <b><a href="home.html">see all></a>
+        <b><font size="5">NEW RELEASE Blue DVD & Blue-ray  </font> <b><a href="/movies">see all></a>
     </div>
 
 
     <div class="w3-container"  >
 
-        @foreach($covers as $cover)
-            <a href="/movies/{{ $id }}"><img src="{{ $cover }}" style="width:125px; height:200px;"/></a>
+        @foreach($movies as $movie)
+            <a href="/movies/{{ $movie->id }}"><img src="{{ $movie->image }}" style="width:125px; height:200px;"/></a>
         @endforeach
-
-
 
     </div>
 

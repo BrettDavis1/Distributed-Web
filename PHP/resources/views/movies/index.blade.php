@@ -28,11 +28,11 @@
 
     <div class="w3-container">
 
-        <a href="MovieInfo.html"><img src="Anchorman.jpg" style="width:250px; height:400px;"/></a>
-        <a href="MovieInfo.html"><img src="Hot_Fuzz.jpg" style="width:250px; height:400px;"></a>
-        <a href="MovieInfo.html"><img src="SuperBad.jpg" style="width:250px; height:400px;"></a>
-        <a href="MovieInfo.html"><img src="The_Hangover.jpg" style="width:250px; height:400px;"></a>
-        <a href="MovieInfo.html"><img src="Shaun_of_the_Dead.jpg" style="width:250px; height:400px;"></a>
+        @foreach($comedies as $comedy)
+
+            <a href="/movies/{{ $comedy->id }}"><img src="{{ $comedy->image }}" style="width:250px; height:400px;"/></a>
+
+        @endforeach
 
 
     </div>
@@ -48,8 +48,10 @@
 
     <div class="w3-container">
 
-        @foreach($covers as $cover)
-            <a href="/movies/{{ $id }}"><img src="{{ $cover }}" style="width:250px; height:400px;"/></a>
+        @foreach($actions as $action)
+
+            <a href="/movies/{{ $action->id }}"><img src="{{ $action->image }}" style="width:250px; height:400px;"/></a>
+
         @endforeach
 
     </div>

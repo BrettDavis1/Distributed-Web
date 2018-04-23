@@ -10,10 +10,12 @@ class HomeController extends Controller
 
     public function index() {
 
-        $covers = Movie::info('image');
-        $id = str_replace('[', '', Movie::info('id'));
-        $id = str_replace(']', '', $id);
-        return view('home.index', compact('covers', 'id'));
+        if(!auth()->check())
+            return redirect()->to('/login');
+
+        $movies = (new Movie)->getMovies();
+        $bp = (new Movie)->movie('4');
+        return view('home.index', compact('movies', 'bp'));
 
     }
 }

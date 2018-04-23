@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', 'SessionsController@index');
 Route::get('/login', 'SessionsController@index');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
@@ -23,7 +22,11 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/movies', 'MoviesController@index');
 Route::get('/movies/{movie}', 'MoviesController@description');
+Route::get('/movies/{movie}/add', 'MoviesController@add');
 
-Route::get('/cart', 'HomeController@index');
+Route::get('/cart', 'ShopController@getCart');
+Route::post('/cart', 'ShopController@store');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/checkout', 'ShopController@getCheckout');
+
+Route::get('/', 'SessionsController@index');
