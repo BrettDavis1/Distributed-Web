@@ -46,11 +46,11 @@
     </div>
 
 
-    <div class="w3-container">
+    <div class="w3-container"style="margin-left:150px; margin-right:150px;>
 
         @foreach($actions as $action)
 
-            <a href="/movies/{{ $action->id }}"><img src="{{ $action->image }}" style="width:250px; height:400px;"/></a>
+            <a href="/movies/{{ $action->id }}"><img src="{{ $action->image }}" style="width:215px; height:344px;"/></a>
 
         @endforeach
 
