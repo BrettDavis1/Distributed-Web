@@ -41,7 +41,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">ACTION   </font> <b>
     </div>
 
@@ -61,7 +61,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">DRAMA    </font> <b>
     </div>
 
@@ -84,7 +84,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">HORROR    </font> <b>
     </div>
 
@@ -107,7 +107,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">SCI-FI    </font> <b>
     </div>
 
