@@ -41,4 +41,23 @@ class Cart
         $this->totalQty++;
         $this->totalPrice += $movie->Price;
     }
+
+    public function reduceByOne($movie, $id) {
+
+        $this->movies[$id]['qty']--;
+        $this->movies[$id]['price'] -= $movie->Price;
+        $this->totalQty--;
+        $this->totalPrice -= $movie->Price;
+
+        if($this->movies[$id]['qty'] <= 0)
+            unset($this->movies[$id]);
+
+    }
+
+    public function removeItem($id) {
+
+        $this->totalQty -= $this->movies[$id]['qty'];
+        $this->totalPrice -= $this->movies[$id]['price'];
+        unset($this->movies[$id]);
+    }
 }

@@ -18,6 +18,11 @@ class Movie extends Model
         return $this->where('id', '!=', '4')->get();
     }
 
+    public function getHistory($id) {
+
+        return $this->where('id', $id)->get();
+    }
+
     public function scopeMovie($query, $id) {
 
         return $query->find($id);

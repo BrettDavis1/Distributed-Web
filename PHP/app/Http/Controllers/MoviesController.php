@@ -14,7 +14,10 @@ class MoviesController extends Controller
 
         $actions = (new Movie)->getMovie('action');
         $comedies = (new Movie)->getMovie('comedy');
-        return view('movies.index', compact('actions', 'comedies'));
+        $dramas = (new Movie)->getMovie('drama');
+        $horrors = (new Movie)->getMovie('horror');
+        $scifis = (new Movie)->getMovie('sci-fi');
+        return view('movies.index', compact('actions', 'comedies', 'dramas', 'horrors', 'scifis'));
 
     }
 

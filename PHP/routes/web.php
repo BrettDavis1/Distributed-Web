@@ -26,7 +26,12 @@ Route::get('/movies/{movie}/add', 'MoviesController@add');
 
 Route::get('/cart', 'ShopController@getCart');
 Route::post('/cart', 'ShopController@store');
-
 Route::get('/checkout', 'ShopController@getCheckout');
+Route::post('/checkout', 'ShopController@buy');
+Route::get('/reduce/{id}', 'ShopController@getReduceByOne');
+Route::get('/remove/{id}', 'ShopController@getRemoveItem');
+
+Route::get('/history', 'ShopController@history');
+Route::get('history/{transaction}', 'ShopController@transaction');
 
 Route::get('/', 'SessionsController@index');
