@@ -41,16 +41,16 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">ACTION   </font> <b>
     </div>
 
 
-    <div class="w3-container">
+    <div class="w3-container"style="margin-left:150px; margin-right:150px;>
 
         @foreach($actions as $action)
 
-            <a href="/movies/{{ $action->id }}"><img src="{{ $action->image }}" style="width:250px; height:400px;"/></a>
+            <a href="/movies/{{ $action->id }}"><img src="{{ $action->image }}" style="width:215px; height:344px;"/></a>
 
         @endforeach
 
@@ -61,7 +61,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">DRAMA    </font> <b>
     </div>
 
@@ -84,7 +84,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">HORROR    </font> <b>
     </div>
 
@@ -107,7 +107,7 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
-    <div class="w3-container w3-padding-32 " >
+    <div class="w3-container w3-padding-32 " style="margin-left:150px; margin-right:150px;>
         <b><font size="5">SCI-FI    </font> <b>
     </div>
 

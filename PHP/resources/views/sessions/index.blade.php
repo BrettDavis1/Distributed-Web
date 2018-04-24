@@ -35,7 +35,7 @@
     </div>
 
     <!--Blank area-->
-    <div class="w3-container " style="height:400px;" >
+    <div class="w3-container " style="height:600px;" >
     </div>
 
 @endsection

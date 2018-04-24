@@ -73,5 +73,9 @@
 
             @endif
     </div>
+        <!--Blank container-->
+            <div class="w3w3-container " style="height:600px;" >
+
+            </div>
 
 @endsection
