@@ -70,7 +70,7 @@
 
         @foreach($dramas as $drama)
 
-            <a href="/movies/{{ $drama->id }}"><img src="{{ $drama->image }}" style="width:250px; height:400px;"/></a>
+            <a href="/movies/{{ $drama->id }}"><img src="{{ $drama->image }}" style="width:215px; height:344px;"/></a>
 
         @endforeach
 
@@ -93,7 +93,7 @@
 
         @foreach($dramas as $drama)
 
-            <a href="/movies/{{ $drama->id }}"><img src="{{ $drama->image }}" style="width:250px; height:400px;"/></a>
+            <a href="/movies/{{ $drama->id }}"><img src="{{ $drama->image }}" style="width:215px; height:344px;"/></a>
 
         @endforeach
 
@@ -116,7 +116,7 @@
 
         @foreach($scifis as $scifi)
 
-            <a href="/movies/{{ $scifi->id }}"><img src="{{ $scifi->image }}" style="width:250px; height:400px;"/></a>
+            <a href="/movies/{{ $scifi->id }}"><img src="{{ $scifi->image }}" style="width:215px; height:344px;"/></a>
 
         @endforeach
 
