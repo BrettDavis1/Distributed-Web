@@ -32,6 +32,8 @@ Route::get('/reduce/{id}', 'ShopController@getReduceByOne');
 Route::get('/remove/{id}', 'ShopController@getRemoveItem');
 
 Route::get('/history', 'ShopController@history');
-Route::get('history/{transaction}', 'ShopController@transaction');
+Route::get('/history/{transaction}', 'ShopController@transaction');
+
+Route::get('/contact', 'HomeController@contact');
 
 Route::get('/', 'SessionsController@index');

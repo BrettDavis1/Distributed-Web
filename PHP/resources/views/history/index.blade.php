@@ -25,9 +25,11 @@
             </tbody>
         </table>
     </div>
-        <!--Blank container-->
-            <div class="w3w3-container " style="height:500px;" >
 
-            </div>
+    <!--Blank container-->
+    <div class="w3w3-container " style="height:600px;" >
+
+    </div>
+
 
 @endsection

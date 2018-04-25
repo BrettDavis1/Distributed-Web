@@ -1,4 +1,4 @@
-<footer class="w3-center w3-black w3-padding-64 " style="background-color: #4d0000 " >
+<footer class="w3-center w3-black w3-padding-64 " style="background-color: #4d0000; " >
     <div class="w3-container " style="height:60px;" >
     </div>
     <a href="{{ url()->current() }}" class="w3-button w3-light-grey" style="color: #ffffff; background-color:#b4b4b4"><i class="fa fa-arrow-up w3-margin-right" style="color: #ffffff;"></i>To the top</a>

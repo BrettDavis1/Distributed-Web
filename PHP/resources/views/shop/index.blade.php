@@ -6,14 +6,18 @@
     <div class="w3w3-container " style="height:46px;" >
     </div>
 
+    <!--Blank container-->
+    <div class="w3w3-container " style="height:46px;" >
+    </div>
+
     <!--cart info area-->
     <div class="w3-row-padding w3-center w3-margin-top" style="margin: auto">
             <h1>Cart</h1>
 
             @if (Session::has('cart') && $totalPrice > 0)
 
-                <div class="row" style="margin: auto">
-                    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3" style="margin: auto">
+                <div class="row" style="margin: auto;">
+                    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3" style="margin: auto;">
                         <ul class="list-group" style="margin: auto">
                             @foreach ($movies as $movie)
 
@@ -73,9 +77,9 @@
 
             @endif
     </div>
-        <!--Blank container-->
-            <div class="w3w3-container " style="height:600px;" >
 
-            </div>
+    <!--Blank Container-->
+    <div class="w3-container " style="height:600px;" >
+    </div>
 
 @endsection
