@@ -20,7 +20,7 @@
     <!--Movie info container-->
     <div class="w3-cell-row" >
         <div class=" w3-container">
-            <a href="home.html"><img src="{{ $movie->image }}" alt="/Genres/Action/Avengers.jpg"style="width:250px; height:400px;"/></a>
+            <img src="{{ $movie->image }}" alt="/Genres/Action/Avengers.jpg"style="width:250px; height:400px;"/>
         </div>
         <div class=" w3-container">
             <form action="/cart" method="POST">

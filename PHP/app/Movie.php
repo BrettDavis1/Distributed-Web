@@ -13,6 +13,11 @@ class Movie extends Model
 
     }
 
+    public function getHomeMovies() {
+
+        return $this->where('id', '!=', '4')->take(10)->get();
+    }
+
     public function getMovies() {
 
         return $this->where('id', '!=', '4')->get();

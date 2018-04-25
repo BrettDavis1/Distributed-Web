@@ -1,3 +1,18 @@
+.example {
+	display: -ms-grid;
+	display: grid;
+	-webkit-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+	background: -webkit-linear-gradient(top, white, black);
+	background: -o-linear-gradient(top, white, black);
+	background: linear-gradient(to bottom, white, black);
+}
 .payment-form{
 	padding-bottom: 50px;
 	font-family: 'Montserrat', sans-serif;
@@ -8,14 +23,15 @@
 }
 
 .payment-form .content{
+	-webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 	background-color: white;
 }
 
 .payment-form .block-heading{
-    padding-top: 50px;
-    margin-bottom: 40px;
-    text-align: center;
+	padding-top: 50px;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
 .payment-form .block-heading p{
@@ -38,6 +54,7 @@
 
 .payment-form form{
 	border-top: 2px solid #5ea4f3;
+	-webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 	background-color: #ffffff;
 	padding: 0;
@@ -55,7 +72,7 @@
 
 .payment-form .products{
 	background-color: #f7fbff;
-    padding: 25px;
+	padding: 25px;
 }
 
 .payment-form .products .item{
@@ -109,33 +126,33 @@
 }
 
 .payment-form .date-separator{
- 	margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
 }
 
 @media (min-width: 576px) {
 	.payment-form .title {
-		font-size: 1.2em; 
+		font-size: 1.2em;
 	}
 
 	.payment-form .products {
-		padding: 40px; 
-  	}
+		padding: 40px;
+	}
 
 	.payment-form .products .item-name {
-		font-size: 1em; 
+		font-size: 1em;
 	}
 
 	.payment-form .products .price {
-    	font-size: 1em; 
+		font-size: 1em;
 	}
 
-  	.payment-form .card-details {
-    	padding: 40px 40px 30px; 
-    }
+	.payment-form .card-details {
+		padding: 40px 40px 30px;
+	}
 
-  	.payment-form .card-details button {
-    	margin-top: 2em; 
-    } 
+	.payment-form .card-details button {
+		margin-top: 2em;
+	}
 }
