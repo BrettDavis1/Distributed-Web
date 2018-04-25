@@ -1,7 +1,7 @@
 <!--Navigation bar-->
 <div class="w3-top"  style= "position: fixed;  top: 0;  width: 100%;  ">
     <div class="w3-bar w3-card"  style="height:55px; background-color: #4d0000; color: #ffffff;">
-        <a href="/home" class="w3-bar-item w3-button"><img src="logo2.jpg" style="width:30px; height:30px;"/>R<img ></a>
+        <a href="/home" class="w3-bar-item w3-button"><img src="RentAMovieLogo.jpg" style="width:30px; height:30px;"/>R<img ></a>
         <div class="w3-right w3-hide-small">
             <a href="/movies" class="w3-bar-item w3-button w3-padding-large w3-hover-white"style="color: #ffffff">Movies</a>
             <a href="/cart" class="w3-bar-item w3-button w3-padding-large w3-hover-white"style="color: #ffffff">Cart</a>
