@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -16,12 +17,13 @@ class RegisterController extends Controller
     public function store() {
         $this->validate(request(), [
             'name' => 'required',
-            'username' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed',
+            'username' => 'required|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/|confirmed',
             'address' => 'required',
             'phone' => 'required',
         ]);
+
 
         $user = User::create(request(['name', 'username', 'email', 'password', 'address', 'phone']));
 

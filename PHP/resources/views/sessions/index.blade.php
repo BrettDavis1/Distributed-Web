@@ -19,7 +19,7 @@
                 </div>
 
             @endif
-            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+            <h1 class="h3 mb-3 font-weight-normal"><b>Login</b></h1>
             <form class="form-signin" method="POST" action="/login">
                 {{ csrf_field() }}
                 Username:<br>

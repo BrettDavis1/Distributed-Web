@@ -12,7 +12,7 @@
 
     <!--cart info area-->
     <div class="w3-row-padding w3-center w3-margin-top" style="margin: auto">
-            <h1>Cart</h1>
+        <h1><b>Cart</b></h1>
 
             @if (Session::has('cart') && $totalPrice > 0)
 
@@ -70,7 +70,7 @@
             @else
 
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3" style="margin: auto">
                         <h2>No Movies in Cart</h2>
                     </div>
                 </div>

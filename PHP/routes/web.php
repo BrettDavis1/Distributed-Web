@@ -36,4 +36,4 @@ Route::get('/history/{transaction}', 'ShopController@transaction');
 
 Route::get('/contact', 'HomeController@contact');
 
-Route::get('/', 'SessionsController@index');
+Route::get('/', 'HomeController@index');

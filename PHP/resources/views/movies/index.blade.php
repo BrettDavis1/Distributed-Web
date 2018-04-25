@@ -93,11 +93,7 @@
 
         @foreach($horrors as $horror)
 
-<<<<<<< HEAD
             <a href="/movies/{{ $horror->id }}"><img src="{{ $horror->image }}" style="width:215px; height:344px;"/></a>
-=======
-            <a href="/movies/{{ $drama->id }}"><img src="{{ $drama->image }}" style="width:215px; height:344px;"/></a>
->>>>>>> ad2f709ee2b56ee3f7575f9d79cd2fca5e1aa917
 
         @endforeach
 

@@ -9,9 +9,6 @@ class MoviesController extends Controller
 {
     public function index() {
 
-        if(!auth()->check())
-            return redirect()->to('/login');
-
         $actions = (new Movie)->getMovie('action');
         $comedies = (new Movie)->getMovie('comedy');
         $dramas = (new Movie)->getMovie('drama');
@@ -22,9 +19,6 @@ class MoviesController extends Controller
     }
 
     public function description(Movie $movie) {
-
-        if(!auth()->check())
-            return redirect()->to('/login');
 
         return view('movies.description', compact('movie'));
 

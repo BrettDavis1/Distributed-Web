@@ -133,6 +133,9 @@ class ShopController extends Controller
 
     public function history() {
 
+        if(!auth()->check())
+            return redirect()->to('/login');
+
         $id = \Auth::id();
         $transactions = DB::table('transaction')->where('UserID', '=', $id)->get();
 
@@ -140,6 +143,9 @@ class ShopController extends Controller
     }
 
     public function transaction($transaction) {
+
+        if(!auth()->check())
+            return redirect()->to('/login');
 
         $id = \Auth::id();
         $vid = DB::table('transaction')->where('TransactionID', '=', $transaction)->pluck('UserID')->first();

@@ -1,11 +1,7 @@
 <!--Navigation bar-->
 <div class="w3-top"  style= "position: fixed;  top: 0;  width: 100%;  z-index: 2">
     <div class="w3-bar w3-card"  style="height:55px; background-color: #4d0000; color: #ffffff;">
-<<<<<<< HEAD
-        <a href="/home" class="w3-bar-item w3-button">Rent a Movie</a>
-=======
-        <a href="/home" class="w3-bar-item w3-button"><img src="RentAMovieLogo.jpg" style="width:30px; height:30px;"/>R<img ></a>
->>>>>>> ad2f709ee2b56ee3f7575f9d79cd2fca5e1aa917
+        <a href="/home" style="position: absolute; left: 10px; bottom: 10px" ><img src="{{ URL::asset('photos/logo.jpg') }}" height="35px"></a>
         <div class="w3-right w3-hide-small">
             <a href="/movies" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Movies</a>
             <a href="/cart" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Cart</a>
