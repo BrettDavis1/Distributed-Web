@@ -100,7 +100,8 @@ CREATE TABLE `transactionitem` (
   `UserID` int(11) NOT NULL,
   `TransactionItemID` int(11) NOT NULL,
   `DVDID` int(11) NOT NULL,
-  `MovieID` int(11) NOT NULL
+  `MovieID` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
